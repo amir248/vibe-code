@@ -1,0 +1,160 @@
+/* КНОПКА */
+
+.menu-toggle{
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 9999;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,.15);
+
+    background: rgba(255,255,255,.05);
+    backdrop-filter: blur(20px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+
+    cursor: pointer;
+
+    transition: all .5s ease;
+}
+
+.menu-toggle:hover{
+    transform: scale(1.06);
+    background: rgba(255,255,255,.08);
+}
+
+.menu-toggle span{
+    width: 28px;
+    height: 2px;
+    background: white;
+    margin: 0 auto;
+    transition: all .5s ease;
+}
+
+/* ACTIVE ICON */
+
+.menu-toggle.active span:nth-child(1){
+    transform: rotate(45deg) translate(6px,6px);
+}
+
+.menu-toggle.active span:nth-child(2){
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3){
+    transform: rotate(-45deg) translate(5px,-5px);
+}
+
+/* OVERLAY */
+
+.menu-overlay{
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at top left,
+        rgba(140,0,255,.25),
+        transparent 40%),
+
+        radial-gradient(circle at bottom right,
+        rgba(0,200,255,.2),
+        transparent 40%),
+
+        rgba(5,5,10,.82);
+
+    backdrop-filter: blur(30px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .7s ease,
+        visibility .7s ease;
+
+    z-index: 9990;
+}
+
+/* SHOW */
+
+.menu-overlay.show{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* MENU */
+
+.mega-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    transform: translateY(80px) scale(.92);
+    opacity: 0;
+
+    transition: all .8s cubic-bezier(.19,1,.22,1);
+}
+
+.menu-overlay.show .mega-menu{
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+/* LINKS */
+
+.mega-menu a{
+    color: white;
+    text-decoration: none;
+
+    font-size: clamp(32px,5vw,68px);
+    font-weight: 700;
+    letter-spacing: -.03em;
+
+    position: relative;
+
+    transition: all .35s ease;
+}
+
+/* ASYNC AWAY EFFECT */
+
+.mega-menu a::after{
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        #8a5cff,
+        #00d4ff
+    );
+
+    transition: width .5s ease;
+}
+
+.mega-menu a:hover{
+    transform: translateX(14px);
+    color: #b388ff;
+
+    text-shadow:
+        0 0 20px rgba(138,92,255,.7),
+        0 0 40px rgba(0,212,255,.35);
+}
+
+.mega-menu a:hover::after{
+    width: 100%;
+}
