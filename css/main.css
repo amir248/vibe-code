@@ -146,7 +146,17 @@ header{
     color:black;
     transform:translateY(-8px);
 }
-
+.btn-bottom{
+    background:linear-gradient(135deg,#00ffae,#00bfff);
+    color:black;
+    padding:17px;
+    margin:17px;
+    display:block;
+}
+.btn-bottom:hover{
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:0 20px 60px rgba(0,255,170,0.4);
+}
 section{
     padding:140px 8%;
 }
