@@ -162,3 +162,8 @@
 }
 
 }
+@media(min-width:768px){
+    .fullscreen-menu a{
+        font-size:30px;
+    }
+}
