@@ -70,6 +70,7 @@ header{
     color:#00ffae;
     font-weight:600;
     letter-spacing:1px;
+    margin-top:97px; /* important */
 }
 
 .hero h1{
