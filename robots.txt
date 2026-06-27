@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# запрещаем системные и мусорные файлы
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /.file.swp
+
+# если css/js/img открыты — не блокируем (важно для SEO)
+
+Sitemap: https://vibe-code.qucu.ru/sitemap.xml
