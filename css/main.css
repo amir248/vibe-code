@@ -84,7 +84,29 @@ header{
     -webkit-text-fill-color:transparent;
     animation:gradient 10s ease infinite;
 }
-
+.hero3{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    width:100%;
+    max-width:1200px;
+    min-height: 400px;
+}
+.hero3 h1{
+    width:100%;
+    max-width:700px;
+    font-size:clamp(20px,3vw,180px);
+    font-weight:900;
+    line-height:0.9;
+    text-transform:uppercase;
+    background:linear-gradient(90deg,#fff,#00ffae,#00bfff,#fff);
+    background-size:300% 300%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:gradient 10s ease infinite;
+}
 @keyframes gradient{
     0%{background-position:0% 50%;}
     50%{background-position:100% 50%;}
@@ -351,4 +373,26 @@ footer p{
     padding:50px 30px;
 }
 
+}
+
+picture > img{
+    width:100%;
+    max-width:300px;
+    border-radius: 7px;
+}
+.right{
+    float:left;
+    margin-right:27px;
+}
+.left{
+    float:right;
+    margin-left:27px;
+}
+@media(max-width:777px){
+    .right{
+        float:none;
+        margin:0;
+        width:100%;
+        max-width:100%;
+    }
 }
