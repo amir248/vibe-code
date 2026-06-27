@@ -15,7 +15,8 @@
         }
         .qr-code{
             /* height: 197px; */
-            width: 197px;
+            max-width: 197px;
+            width:100%;
             overflow: hidden;
             opacity: 1;
             float: right;
@@ -28,10 +29,11 @@
         }
         @media(max-width:400px){
             .qr-code{
-                width:100%;
+                max-width:100%;
             }
             picture > img{
-                width:100%;
+                max-width:100%;
+                float:none;
             }
         }
         
