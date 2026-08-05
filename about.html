@@ -249,6 +249,40 @@
             В связке с SEO и контекстной рекламой он позволяет быстро получать трафик и заявки без долгой разработки.
         </p>
     </section>
+    <section>
+          <!--
+          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+          Here commentsBlock!
+          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+        -->
+        <div id="comments" style="width:100%;max-width:100%"></div>
+        <a href="https://qucu.ru/comments" style="font-size: 17px;">https://qucu.ru/comments/</a>
+      
+        <script>
+          async function loadAssets() {
+          try{
+            // Загружаем CSS
+            const cssResponse = await fetch("https://qucu.ru/comments/style",{
+              credentials: "include" // <- cookie
+            });
+            const cssText = await cssResponse.text();
+            const style = document.createElement("style");
+            style.textContent = cssText;
+            document.head.append(style);
+            // Загружаем JS
+            const jsResponse = await fetch("https://qucu.ru/comments/js/7",{
+              credentials: "include" // <- cookie
+            });
+            const jsText = await jsResponse.text();
+            const js = document.createElement("script");
+            js.type = "text/javascript";
+            js.textContent = jsText;
+            document.head.append(js);
+            console.log("JS и CSS успешно подгружены!");
+            }catch(err){console.error("Ошибка загрузки:", err)};
+          }
+        loadAssets();
+        </script>
 <div class="box">
     <a id="whatsapp" href="https://wa.me/79528885656?text=Hello%20I%20want%20to%20order%20a%20website" class="btn btn-bottom">
     WhatsApp
